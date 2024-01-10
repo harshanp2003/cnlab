@@ -53,10 +53,10 @@ $cbr2 attach-agent $tcp2
 $ns connect $tcp1 $sink1
 $ns connect $tcp2 $sink2
 proc End {} {
-global ns nt na
+global ns ntrace namfile
 $ns flush-trace
-close $na
-close $nt
+close $namfile
+close $ntrace
 exec nam Pgm_11_B.nam &
 }
 $ns at 0.0 "$cbr1 start"
